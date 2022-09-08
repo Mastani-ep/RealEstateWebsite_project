@@ -1,0 +1,114 @@
+{% extends 'estatesite/base.html' %}
+{% load static %}
+{%block content%}
+
+<div>
+    <div class="container submit-container">
+        <h1><b>SUBMIT YOUR OFFER</b></h1>
+    </div>
+    {% if not_login %}
+        <div class="container" style="margin-top: 2%">
+        <div class="alert alert-danger" role="alert">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+                You have to log in to make an offer!
+            <a class="text_alert" href="/login"> Log in here</a>
+        </div>
+    </div>
+    {% endif %}
+{% if submitted %}
+<div class="container" style="margin-top: 2%">
+    <div class="alert alert-success" role="alert">
+        <i class="fa-solid fa-circle-check"></i>
+        Your offer was submitted successfully!
+        <a class="text_alert_success" href="/home">Go back to homepage</a>
+    </div>
+</div>
+{% elif not not_login %}
+<form enctype="multipart/form-data" class="forms" action="" method=POST>
+    {% csrf_token %}
+    <div class="container">
+        <div class="row justify-content-center forms">
+                <div class="col-12">
+                {{form.title}}
+                </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+               {{form.type}}
+            </div>
+            <div class="col-6">
+                {{form.transaction}}
+            </div>
+            </div>
+
+        <div class="row forms justify-content-center">
+                <div class="col-12">
+                {{form.address}}
+                </div>
+        </div>
+
+        <div class="row forms justify-content-center">
+                <div class="col-6">
+                {{form.price}}
+                </div>
+                <div class="col-6">
+                {{form.size}}
+                </div>
+         </div>
+
+        <div class="row forms justify-content-center">
+                <div class="col-6">
+                {{form.rooms}}
+                </div>
+                <div class="col-6">
+                {{form.bathrooms}}
+                </div>
+         </div>
+
+        <div class="row forms justify-content-center">
+                <div class="col-6">
+                {{form.garage}}
+                </div>
+         </div>
+        <div class="row forms justify-content-center">
+                <div class="col-12">
+                {{form.description}}
+                </div>
+        </div>
+        <div class="row forms justify-content-center">
+            <b>Upload the photos</b>
+       </div>
+        <div class="row forms justify-content-center">
+                <div class="col-3">
+                {{form.photo}}
+                </div>
+                <div class="col-3">
+
+                {{form.photo_1}}
+                {{form.photo_2}}
+
+                </div>
+                <div class="col-3">
+
+                {{form.photo_3}}
+                {{form.photo_4}}
+
+                </div>
+                <div class="col-3">
+
+                {{form.photo_5}}
+                {{form.photo_6}}
+
+                </div>
+
+        </div>
+         <div class="row forms">
+            <button class="btn btn-secondary btn-lg" type="submit">Submit offer</button>
+        </div>
+        </div>
+    </form>
+{% endif %}
+</div>
+
+
+{% endblock %}

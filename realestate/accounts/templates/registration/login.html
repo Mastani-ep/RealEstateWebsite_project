@@ -1,0 +1,15 @@
+{%extends "estatesite/base.html" %}
+{%load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+<div class="forms">
+<form method="post" class=form-group">
+    {% csrf_token %}
+    {{form|crispy}}
+    <div class="buttons" >
+        <button type="submit" class="btn btn-login btn-md"> Login </button>
+        <p>Don't have an account? Create one <a href="/register">here</a></p>
+    </div>
+</form>
+</div>
+{% endblock %}

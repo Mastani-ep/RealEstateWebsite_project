@@ -1,0 +1,86 @@
+{% load static %}
+<style>
+    #backgroundimage {
+    background: url({% static "estatesite/house.jpg" %});
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+    .overlay-box {
+  display: flex;           /* establish flex container in case its content needs to be centered */
+  justify-content: center; /* center items vertically in case its content needs to be centered */
+  align-items: center;     /* center items horizontally in case its content needs to be centered */
+  margin: auto;
+        height: 30vw;
+  background-color: transparent;
+  position:relative;
+}
+</style>
+<div id="backgroundimage">
+    <div class="overlay-box">
+    <form class="forms" method=POST action="{% url 'search_results' %}">
+        {% csrf_token %}
+        <div class="container form-group" style="margin-top: 3%">
+            <div class="row justify-content-center text_color" style="margin-bottom: 5%">
+                <h1><b>Looking for...</b></h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6">
+                {{form.type}}
+                </div>
+                <div class="col-6">
+                {{form.transaction}}
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-center">
+                <div class="col-8">
+                {{form.address}}
+                </div>
+                <div class="col-4">
+                {{form.keyword}}
+                </div>
+            </div>
+
+            <div class="row mt-3 justify-content-center" >
+                <div class="col-3 input-group">
+                {{form.price_from}}
+                    <span class="input-group-text">zł</span>
+                </div>
+                <div class="col-3 input-group">
+                {{form.price_to}}
+                <span class="input-group-text">zł</span>
+                </div>
+                <div class="col-3 input-group">
+                {{form.size_from}}
+                <span class="input-group-text"> m<sup>2</sup></span>
+                </div>
+                <div class="col-3 input-group">
+                {{form.size_to}}
+                    <span class="input-group-text"> m<sup>2</sup></span>
+                </div>
+            </div>
+
+            <div class="row mt-3 justify-content-center">
+                <div class="col-3 ">
+                {{form.rooms_from}}
+                </div>
+                <div class="col-3 ">
+                {{form.rooms_to}}
+                </div>
+                <div class="col-3">
+                {{form.bathrooms_from}}
+                </div>
+                <div class="col-3">
+                {{form.bathrooms_to}}
+                </div>
+            </div>
+            <div class="row mt-3 justify-content-end" style=" margin-right: 10px;" >
+                <button class="btn btn-secondary btn-lg" type="submit">Search</button>
+            </div>
+            </div>
+    </form>
+    </div>
+</div>

@@ -1,0 +1,226 @@
+ .delete:hover {
+            color: red;
+}
+ .nav-link:hover{
+     text-decoration: none;
+     color: white;
+ }
+ .nav-title{
+     text-decoration: none;
+     color: white;
+ }
+
+ .text_alert_success{
+     color: darkgreen;
+ }
+
+ .text_alert_success:hover{
+     text-decoration: underline;
+     color: darkgreen;
+ }
+
+ .text_alert{
+     color: darkred;
+ }
+
+ .text_alert:hover{
+     text-decoration: underline;
+     color: darkred;
+ }
+ .site-background{
+     background-color:rgba(255,252,252,0.8);
+ }
+        .delete-modal {
+            background-color: #D0342C;
+            color: white;
+
+}
+        .cancel {
+            background-color: grey;
+            color: white;
+}
+        .contact-modal {
+            background-color: #995080 ;
+            color: white;
+
+}
+
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+            position: absolute;
+        }
+        .nav-link{
+        color:white
+    }
+
+
+
+    .text_area{
+        width: 100%;
+        height: 100%;
+        color:gray;
+        border: 1px solid lightgray;
+
+}
+    .forms{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .cards{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .buttons{
+        text-align:center
+    }
+    .btn-secondary{
+        background-color: #7F2460 !important;
+        border: #7F2460 !important;
+        width:30%;
+}
+    .btn-register{
+        margin-left: auto;
+        background-color: #7F2460 !important;
+        color: white;
+        border: #7F2460 !important;
+        width:30%;
+}
+    .btn-login {
+        margin-left: auto;
+        background-color: #7F2460 !important;
+        color: white;
+        border: #7F2460 !important;
+        width: 30%;
+    }
+    .labels{
+        text-align:center;
+        color: transparent;
+
+    }
+
+
+    .navbar-custom {
+        background-color: rgb(127, 36, 96);
+        color: white;
+}
+    .text_color{
+        color: white;
+}
+    .selectpicker > option[selected] {
+        display: none;
+}
+    .card-img {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+    .carousel-item {
+  height: 500px;
+}
+    .container-fluid { padding: 0; }
+
+    .submit-container{
+        margin-top:20px;
+        height: 30%;
+        color:  rgb(127, 36, 96);
+        text-align: center;
+    }
+
+    #main-footer{
+        background-color: dimgray;
+    }
+
+    .property_title{
+        color: white;
+        margin-left: 5%;
+        margin-top: 3%;
+        text-align:left;
+    }
+
+    .property_price{
+        border-left: 3px solid white;
+        color: white;
+        margin-right: 5%;
+        margin-top: 3%;
+        justify-content: right;
+        text-align:right;
+    }
+
+
+    .agent{
+        border: 11px solid #995080 ;
+    }
+    .contact_agent{
+        border: 1px solid #995080 ;
+    }
+    .property_text{
+        color: #995080;
+    }
+
+    .search_text{
+        color: #8d4a77;
+    }
+
+
+
+    .card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    padding: 0!important;
+    background-color: #995080!important;
+    margin-top: 450px;
+        margin-left: 10px;
+        margin-right: 10px;
+    height: 25%
+}
+    .prop_desc{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .fa-bed {
+  color: #995080;
+}
+    .fa-bath {
+        color: #995080;
+    }
+    .fa-table-cells-large {
+        color: #995080;
+    }
+        .fa-warehouse {
+        color: #995080;
+    }
+
+    .fa-envelope{
+        color: #995080;
+    }
+
+        .fa-phone{
+        color: #995080;
+    }
+
+        .fa-user{
+        color: white;
+    }
+
+    .fa-triangle-exclamation{
+        color: darkred;
+    }
+    .fa-circle-check{
+        color: darkgreen;
+    }
+    .fa-user-tie{
+        color: white;
+    }
+    .fa-crown{
+        color: white;
+    }
+
+
+    ul {
+        list-style-type: none;
+    }

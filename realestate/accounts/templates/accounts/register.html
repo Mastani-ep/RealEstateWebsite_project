@@ -1,0 +1,35 @@
+{% extends 'estatesite/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% if recaptcha_warning %}
+<div class="container" style="margin-top: 2%">
+    <div class="alert alert-danger" role="alert">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        Remember about reCaptcha!
+    </div>
+</div>
+{% endif %}
+
+{% if registered %}
+<div class="container" style="margin-top: 2%">
+    <div class="alert alert-success" role="alert">
+        <i class="fa-solid fa-circle-check"></i>
+        Your account was registered successfully!
+        <a class="text_alert_success" href="/home">Go back to homepage</a>
+    </div>
+</div>
+{% endif %}
+
+<div class="forms">
+    <div class="center">
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="buttons">
+            <button type="submit" class="btn btn-register btn-md">Register</button>
+        </div>
+    </form>
+    </div>
+</div>
+{% endblock %}

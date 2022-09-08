@@ -1,0 +1,114 @@
+{% extends 'estatesite/base.html' %}
+{% load static %}
+{% load custom_tags %}
+{%block content%}
+
+<div>
+    <div class="container" style="margin-top:20px;height: 30%; color:  rgb(127, 36, 96); text-align: center">
+        <h1><b>EDIT OFFER</b></h1>
+    </div>
+{% if edited %}
+    <div class="container" style="margin-top: 2%">
+    <div class="alert alert-success" role="alert">
+        <i class="fa-solid fa-circle-check"></i>
+        The offer was edited successfully!
+        <a class="text_alert_success" href="/user_offer">Go back to my offers</a>
+    </div>
+</div>
+{% else %}
+<form enctype="multipart/form-data" class="forms" action="" method=POST>
+    {% csrf_token %}
+    <div class="container">
+        <div class="row justify-content-center forms">
+                <div class="col-12">
+                {{form.title}}
+                </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+               {{form.type}}
+            </div>
+            <div class="col-6">
+                {{form.transaction}}
+            </div>
+            </div>
+
+        <div class="row forms justify-content-center">
+                <div class="col-12">
+                {{form.address}}
+                </div>
+        </div>
+
+        <div class="row forms justify-content-center">
+                <div class="col-6">
+                {{form.price}}
+                </div>
+                <div class="col-6">
+                {{form.size}}
+                </div>
+         </div>
+
+        <div class="row forms justify-content-center">
+                <div class="col-6">
+                {{form.rooms}}
+                </div>
+                <div class="col-6">
+                {{form.bathrooms}}
+                </div>
+         </div>
+
+        <div class="row forms justify-content-center">
+                <div class="col-6">
+                {{form.garage}}
+                </div>
+         </div>
+        <div class="row forms justify-content-center">
+                <div class="col-12">
+                {{form.description}}
+                </div>
+        </div>
+         {% if request.user|has_group:"Agents" %}
+        <div class="row forms justify-content-center">
+            <b>Publish the offer</b>
+       </div>
+        <div class="row forms justify-content-center">
+                <div class="col-1">
+                {{form.is_published}}
+                </div>
+        </div>
+        {%endif%}
+        <div class="row forms justify-content-center">
+            <b>Upload the photos</b>
+       </div>
+        <div class="row forms justify-content-center">
+                <div class="col-3">
+                {{form.photo}}
+                </div>
+                <div class="col-3">
+
+                {{form.photo_1}}
+                {{form.photo_2}}
+
+                </div>
+                <div class="col-3">
+
+                {{form.photo_3}}
+                 {{form.photo_4}}
+
+                </div>
+                <div class="col-3">
+
+                {{form.photo_5}}
+                {{form.photo_6}}
+
+                </div>
+
+        </div>
+         <div class="row forms">
+            <button class="btn btn-secondary btn-lg" type="submit">Edit offer</button>
+        </div>
+        </div>
+    </form>
+{% endif %}
+</div>
+{% endblock %}

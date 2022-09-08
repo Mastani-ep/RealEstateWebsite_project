@@ -1,0 +1,82 @@
+{% extends 'estatesite/base.html' %}
+{% load static %}
+{%block content%}
+<div class="d-flex justify-content-center" style="margin-top: 20px">
+    <div class="container ">
+        {% if properties|length == 0%}
+        <div class="container" style="margin-top:20px;height: 30%; color:  rgb(127, 36, 96); text-align: center">
+        <h3>No results found</h3>
+        <a type="button" class="btn cancel" href="/home">Go back</a>
+        </div>
+        {% endif %}
+    {% for prop in properties %}
+        <div class="row d-flex justify-content-center" style="margin-top: 20px">
+        <div class="card mb-6" style="width: 100%; height: 32vh;">
+            <div class="row no-gutters">
+            <div class="col-md-4 align-self-center">
+                <img src="{{prop.photo.url}}" class="card-img">
+        </div>
+            <div class="col-md-8 align-self-center">
+                <div class="card-body">
+                    <div class="row no-gutters">
+                    <div class="col-md-9">
+                    <h3 class="card-title">
+                        <a href="{% url 'property' prop.id %}" style="text-decoration: none; color:black;">{{prop}}</a>
+                    </h3>
+                        <h4 class="card-text">{{prop.address}}</h4>
+                        <div class="container">
+                            <div class="row">
+                                    <ul>
+                                        <li>
+                                            <i class="fa-solid fa-table-cells-large"> </i>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-bed"></i>
+                                        </li>
+                                    </ul>
+
+                                    <ul>
+                                        <li><b>Size:</b></li>
+                                        <li><b>Bedrooms:</b></li>
+                                    </ul>
+                                    <ul>
+                                        <li>{{prop.size}} m<sup>2</sup></li>
+                                        <li>{{prop.rooms}}</li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <i class="fa-solid fa-bath"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-warehouse"></i>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li><b>Bathrooms:</b></li>
+                                        <li><b>Garages:</b></li>
+                                    </ul>
+
+                                    <ul>
+                                        <li>{{prop.bathrooms}}</li>
+                                        <li>{{prop.garage}}</li>
+                                    </ul>
+
+                            </div>
+
+
+                        </div>
+                        </div>
+                     <div class="col-md-3" style="text-align: center;">
+                            <h3>{{prop.price}} zł</h3>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+            </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
